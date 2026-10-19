@@ -1,4 +1,6 @@
 
+/* Configurações gerais */
+
 * {
     box-sizing: border-box;
 }
@@ -9,6 +11,8 @@ body {
     background-color: #121212;
     color: #f5f5f5;
 }
+
+/* Cabeçalho */
 
 header {
     background-color: #1e1e1e;
@@ -26,6 +30,8 @@ header h1 {
 header p {
     color: #cccccc;
 }
+
+/* Navegação */
 
 nav ul {
     display: flex;
@@ -45,6 +51,8 @@ nav a {
 nav a:hover {
     color: #60a5fa;
 }
+
+/* Conteúdo principal */
 
 main {
     width: 90%;
@@ -72,7 +80,7 @@ h3 {
 
 form {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
 }
 
@@ -145,6 +153,7 @@ form button {
 
 #pesquisa div {
     flex: 1 1 200px;
+    min-width: 0;
 }
 
 #pesquisa label {
@@ -190,6 +199,12 @@ form button {
     margin: 4px 4px 4px 0;
 }
 
+/* Destaque dos cards */
+
+#jogos article:hover {
+    border-color: #60a5fa;
+}
+
 /* Detalhes do jogo */
 
 #detalhes article {
@@ -202,6 +217,27 @@ form button {
     line-height: 1.6;
 }
 
+/* Botões de exclusão */
+
+#jogos article button:last-child,
+#detalhes article button:last-child {
+    background-color: #b91c1c;
+}
+
+#jogos article button:last-child:hover,
+#detalhes article button:last-child:hover {
+    background-color: #991b1b;
+}
+
+/* Mensagem informativa */
+
+.mensagem {
+    padding: 12px;
+    background-color: #263b56;
+    border-left: 4px solid #60a5fa;
+    border-radius: 4px;
+}
+
 /* Rodapé */
 
 footer {
@@ -211,13 +247,15 @@ footer {
     border-top: 1px solid #444444;
 }
 
-/* Responsividade */
+/* Responsividade para tablets */
 
 @media (max-width: 800px) {
     #jogos {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+
+/* Responsividade para celulares */
 
 @media (max-width: 600px) {
     main {
